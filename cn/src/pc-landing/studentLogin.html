@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="css/common.css" />
+    <link type="text/css" rel="stylesheet" href="css/studentLogin.css" />
+
+    <script src="js/jquery.min.js"></script>
+    <title>学生中心</title>
+</head>
+
+</div>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <img src="./images/loginLogo.png" alt="" id="logo">
+        </div>
+    </div>
+    <div class="container">
+        <p class="title">登录</p>
+        <div class="content-box">
+            <div class="login-box content-box ">
+                <div style="height:60px"></div>
+                <div class="input-box relative">
+                    <label class="tips canSee">您的手机号码<span>*</span></label>
+                    <input id="phone" required type="tel" placeholder="请输入手机号码" maxlength="11">
+                    <p class="tipmes canSee">请输入正确的手机号码</p>
+                </div>
+                <!-- <div id="mpanel1" style="">
+        
+                        </div> -->
+                <div class="input-box relative ">
+                    <label class="tips canSee">输入您的密码<span>*</span></label>
+                    <input id="passWord" type="password" placeholder="请输入您密码">
+                    <p class="tipmes canSee error">密码错误</p>
+                </div>
+                <button id="next-step" style="cursor: pointer">登录</button>
+                <a href="forget.html" class="forget">忘记密码？</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var phoneText;
+    var gotoPage = false;
+    var baseUrl = 'https://ce.proudkids.cn';
+    //var baseUrl = 'http://192.168.1.80:9527'
+    var token = '';
+    var passWord;
+    $('#logo').click(function() {
+        window.location.href = '../home.html'
+    })
+    $(window).ready(function() {
+        phoneText = localStorage.getItem('phoneText');
+        $('#phone').val(phoneText)
+        if (phoneText) {
+            $('#phone').siblings('label').removeClass('canSee');
+        }
+    })
+    $('.input-box input').focus(function() {
+        $(this).siblings('label').removeClass('canSee');
+    })
+    $('.input-box input').blur(function() {
+        if (!$(this).val()) {
+            $(this).siblings('label').addClass('canSee');
+        } else {
+            $(this).siblings('label').removeClass('canSee');
+
+        }
+    })
+    $('#phone').change(function() {
+        phoneText = $.trim($(this).val());
+        console.log(phoneText);
+        if (phoneText.length == 11 && (/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(phoneText))) {
+            $(this).siblings('p').addClass('canSee');
+            localStorage.setItem('phoneText', phoneText);
+            gotoPage = true;
+        } else {
+            $(this).siblings('p').removeClass('canSee');
+        }
+        if (phoneText.length == 0) {
+            $(this).siblings('p').addClass('canSee');
+        }
+    })
+
+    $('#next-step').click(function() {
+        console.log(1)
+        phoneText = $('#phone').val()
+        if (phoneText) {
+            Login()
+        } else {
+            $('#phone').siblings('p').removeClass('canSee');
+        }
+    });
+    //设置cookie
+    function setCookie(name, value, iDay, iPath) {
+        var oDate = new Date();
+        iDay = arguments[2] ? arguments[2] : 1;
+        iPath = arguments[3] ? arguments[3] : "/";
+        oDate.setDate(oDate.getDate() + iDay);
+        document.cookie = name + "=" + encodeURIComponent(value) + ";expires=" + oDate + ";path=" + iPath;
+    }
+
+    function getCookie(name) {
+        var arr = document.cookie.split("; ");
+        for (var i = 0; i < arr.length; i++) {
+            var arr2 = arr[i].split("=");
+            if (arr2[0] === name) {
+                return decodeURIComponent(arr2[1]);
+            }
+        }
+        return "";
+    };
+
+    function Login() { //登录
+        passWord = $('#passWord').val()
+        $.ajax({
+            //http://192.168.1.80:9527/auth/ruser/mobile/token?mobile=15110778169&password=xxxx&grant_type=mobile&scope=server
+            //url: 'https://wechat.proudkids.cn/packGroupController.do?sendSMS&phone=' + phoneText,
+            url: baseUrl + '/auth/ruser/mobile/token?mobile=' + phoneText + '&password=' + passWord + '&grant_type=mobile&scope=server',
+            type: 'post',
+            async: false,
+            cache: false,
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                //changeText();
+                var nickname = data.nickname
+                var ruserId = data.ruserId
+                token = data.oauth2.value
+                setCookie('token', data.oauth2.value);
+                setCookie('refreshToken', data.oauth2.refreshToken.value);
+                window.location.href = 'https://wechat.proudkids.cn/perviews/beforeclass/list.html?token=' + token + '&nickname=' + nickname + '&ruserId=' + ruserId
+            },
+            error: function(res) {
+                console.log(res.responseJSON.status)
+                if (res.responseJSON.status == 401) {
+                    $('.error').removeClass('canSee');
+                }
+            }
+        })
+    }
+</script>
+
+</html>

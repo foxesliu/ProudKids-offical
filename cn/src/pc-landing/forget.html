@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="css/common.css" />
+    <link type="text/css" rel="stylesheet" href="css/studentLogin.css" />
+    <link rel="stylesheet" href="css/jquery.my-message.1.1.css" />
+    <script src="js/jquery.min.js"></script>
+    <title>学生中心</title>
+</head>
+
+</div>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <img src="./images/loginLogo.png" alt="" id="logo">
+        </div>
+    </div>
+    <div class="container">
+        <p class="title">忘记密码</p>
+        <div class="content-box">
+            <div class="login-box content-box ">
+                <div style="height:60px"></div>
+                <div class="input-box relative">
+                    <label class="tips canSee">您的手机号码<span>*</span></label>
+                    <input id="phone" required type="tel" placeholder="请输入手机号码" maxlength="11">
+                    <p class="tipmes canSee">请输入正确的手机号码</p>
+                </div>
+                <!-- <div id="mpanel1" style="">
+        
+                        </div> -->
+                <div class="input-box relative ">
+                    <label class="tips canSee">输入验证码<span>*</span></label>
+                    <input id="message" maxlength="4" type="text" placeholder="请输入验证码">
+                    <a id="get-message" style="cursor: pointer">获取验证码</a>
+                    <p class="tipmes canSee">请输入正确验证码</p>
+                </div>
+                <div class="input-box relative">
+                    <label class="tips canSee">输入您的新密码<span>*</span></label>
+                    <input id="newpassWord" type="password" placeholder="请输入您的新密码">
+                    <p class="tipmes canSee error">请输入您的新密码</p>
+                </div>
+                <a id="next-step" style="cursor: pointer;margin-top: 20px">确定</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery.my-message.1.1.js"></script>
+<script>
+    var phoneText;
+    var gotoPage = false;
+    var baseUrl = 'https://ce.proudkids.cn';
+    //var baseUrl = 'http://192.168.1.80:9527'
+    var token = '';
+    var passWord;
+    var messageVal;
+    var smsCode;
+    var buttonCode = 0;
+    $('#logo').click(function() {
+        window.location.href = '../home.html'
+    })
+    $('.input-box input').focus(function() {
+        $(this).siblings('label').removeClass('canSee');
+    })
+    $('.input-box input').blur(function() {
+        if (!$(this).val()) {
+            $(this).siblings('label').addClass('canSee');
+        } else {
+            $(this).siblings('label').removeClass('canSee');
+
+        }
+    })
+    $('#phone').change(function() {
+        phoneText = $.trim($(this).val());
+        console.log(phoneText);
+        if (phoneText.length == 11 && (/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(phoneText))) {
+            $(this).siblings('p').addClass('canSee');
+            localStorage.setItem('phoneText', phoneText);
+            gotoPage = true;
+        } else {
+            $(this).siblings('p').removeClass('canSee');
+        }
+        if (phoneText.length == 0) {
+            $(this).siblings('p').addClass('canSee');
+        }
+    })
+
+    $('#next-step').click(function() {
+        passWord = $('#newpassWord').val()
+        messageVal = $('#message').val()
+        if (!phoneText) {
+            $('#phone').siblings('p').removeClass('canSee');
+        }
+        if (!messageVal) {
+            $('#message').siblings('p').removeClass('canSee');
+        }
+        if (!passWord) {
+            $('.error').removeClass('canSee');
+        }
+        console.log(1)
+        if (phoneText && messageVal && passWord) {
+            getBackPassWorld()
+        }
+
+    });
+
+    $('#get-message').click(function() {
+        getCode();
+    });
+    //设置cookie
+    function setCookie(name, value, iDay, iPath) {
+        var oDate = new Date();
+        iDay = arguments[2] ? arguments[2] : 1;
+        iPath = arguments[3] ? arguments[3] : "/";
+        oDate.setDate(oDate.getDate() + iDay);
+        document.cookie = name + "=" + encodeURIComponent(value) + ";expires=" + oDate + ";path=" + iPath;
+    }
+
+    function getCookie(name) {
+        var arr = document.cookie.split("; ");
+        for (var i = 0; i < arr.length; i++) {
+            var arr2 = arr[i].split("=");
+            if (arr2[0] === name) {
+                return decodeURIComponent(arr2[1]);
+            }
+        }
+        return "";
+    };
+
+    $(window).ready(function() {
+        token = getCookie('token');
+    })
+
+    //忘记密码，取回
+    function getBackPassWorld() {
+        smsCode = $('#message').val();
+        newpassword = $('#newpassWord').val()
+        $.ajax({
+            //url: 'https://wechat.proudkids.cn/packGroupController.do?sendSMS&phone=' + phoneText,
+            url: baseUrl + '/ruser/ruser/v1/getback/password',
+            type: 'post',
+            async: false,
+            cache: false,
+            // headers: {
+            //     'Authorization': 'Bearer ' + token
+            // },
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                'code': smsCode,
+                'newpassword': newpassword,
+                'phone': phoneText
+            }),
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+                if (data.code == 500) {
+                    message.add("验证码错误", "error");
+                }
+                if (data.code == 0) {
+                    message.add("修改成功", "success");
+                    setTimeout(function() {
+                        window.location.href = 'studentLogin.html'
+                    }, 2000)
+
+                }
+
+            },
+            error: function() {
+                console.log('获取失败')
+            }
+        })
+    }
+    //获取验证码
+    function getCode() {
+        console.log(phoneText)
+        if (buttonCode == 1) {
+            console.log('发送频繁，请稍后')
+            return false
+        } else {
+            console.log('进入')
+            buttonCode = 1;
+            changeText();
+            $.ajax({
+                //url: 'https://wechat.proudkids.cn/packGroupController.do?sendSMS&phone=' + phoneText,
+                url: baseUrl + '/admin//smsCode/' + phoneText,
+                type: 'get',
+                async: false,
+                cache: false,
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data);
+                    //changeText();
+                },
+                error: function() {
+                    console.log('获取失败')
+                }
+            })
+        }
+    };
+
+    function changeText() {
+        var rightTime = 60;
+        $('#get-message').html('60秒');
+        countdown = setInterval(function() {
+            if (rightTime > 0) {
+                buttonCode = 1;
+                rightTime--;
+                $('#get-message').html(rightTime + '秒');
+            } else {
+                clearInterval(countdown);
+                buttonCode = 0;
+                $('#get-message').html('点击获取');
+            }
+        }, 1000);
+
+    };
+    var message = new MyMessage.message({
+        /*默认参数，下面为默认项*/
+        iconFontSize: "20px", //图标大小,默认为20px
+        messageFontSize: "12px", //信息字体大小,默认为12px
+        showTime: 2000, //消失时间,默认为3000
+        align: "center", //显示的位置类型center,right,left
+        positions: { //放置信息距离周边的距离,默认为10px
+            top: "10px",
+            bottom: "10px",
+            right: "10px",
+            left: "10px"
+        },
+        message: "这是一条消息", //消息内容,默认为"这是一条消息"
+        type: "normal", //消息的类型，还有success,error,warning等，默认为normal
+    });
+</script>
+
+</html>

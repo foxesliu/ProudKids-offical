@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1, maximum-scale=1">
+    <title>Proud Kids 在线少儿英语 官网 | 5-12岁在线固定外教小班课</title>
+    <meta name="keywords" content="Proud Kids,proud kids,proudkids,ProudKids,proud,kids,Proud,Kids,在线少儿英语领导品牌，一对一，外教，VIP个性化，学科英语，儿童，小学，英语，美国小学，教材，在线，翻转式课堂，浸入式英语学习；欧美外教一对一，外教一对一，外教，英语外教一对一，在线英语培训，英语口语培训，在线英语，个性化教学，青少英语，学英语的网站，儿童英语，少儿英语，小学英语、初中英语，北美小学" />
+    <meta name="description" content="Proud Kids由一位长居海外、现回国投身国内英语教育事业的英语教育产品专家Chris Leeson和一位互联网浪潮中稳扎稳打、厚积薄发的互联网产品专家Proud Bai共同创立。团队其他成员均为资深在线教育从业者。作为一家国际化基因的在线少儿英语教育品牌，Proud Kids专为5-12岁孩子提供高品质在线固定外教小班课，致力于打造更好的课程内容、互动体验和学习服务。" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <link rel="shortcut icon " type="images/x-icon" href="./favicon.png">
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/personal.css" />
+    <link rel="stylesheet" href="js/paging.css" />
+    <link rel="stylesheet" href="./plugins/icons/style.css" />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/jquery.mloading.css">
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="./js/jquery.mloading.js"></script>
+    <!--<script src="./js/ajaxfileupload.js"></script>-->
+    <!--<script src="./js/initPage.js"></script>-->
+    <script src="./js/paging.js"></script>
+</head>
+<script type="text/javascript">
+    function resize() {
+        var htmlEle = document.documentElement;
+        var htmlWidth = window.innerWidth;
+        htmlEle.style.fontSize = 100 / 1920 * htmlWidth + 'px';
+    }
+    resize();
+</script>
+
+<body>
+    <!--<form id= "uploadForm">-->
+    <!--<p >指定文件名： <input type="text" name="filename" value= ""/></p >-->
+    <!--<input type='file' id="file" multiple accept = 'image/gif,image/jpeg,image/jpg,image/png' />-->
+    <!--<input type="button" value="上传" onclick="doUpload()" />-->
+    <!--</form>-->
+    <div id="fakeLoader"></div>
+    <div id="container">
+        <div class="header">
+            <a class="logo" href="index.html">
+                <img src="./images/logo.png" alt="">
+            </a>
+            <div class="login">
+                <span class="user-name"></span><a onclick="signOut()">退出</a>
+            </div>
+            <!-- <a href="download.html" style="float:right">
+            <img src="./images/down_bg1.png" alt="">
+        </a> -->
+        </div>
+
+        <div class="large-warn">
+            <h1>您还未购买常规课</h1>
+            <img src="images/login/qr-code.jpg">
+            <p>
+                关注官方微信，回复手机号和宝贝名字，领取体验课套装
+            </p>
+        </div>
+
+        <div class="cont">
+            <div class="cont_header">
+                <div class="user_img">
+                    <img src="./images/user_img.png" alt="">
+                    <form id="uploadForm">
+                        <a href="javascript:;" class="file">
+                            <input type="file" name="" id="file">
+                        </a>
+                    </form>
+                </div>
+            </div>
+            <div class="tab_btn">
+                <button class="btn_left btnActive" onclick="changeStatus(1,10,1)">待上课程：<span id="wait-lessons">00</span>节</button>
+                <button class="btn_right" onclick="changeStatus(1,10,2)">已上课程：<span id="complete-lessons">00</span>节</button>
+            </div>
+            <table class="left_class" style="display: none">
+                <tr>
+                    <th>购买时间</th>
+                    <th>课程包</th>
+                    <th>课时量</th>
+                    <th>价格</th>
+                    <th>赠课</th>
+                    <th>顾问老师</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>2017/01/14 14：58：00</td>
+                    <td>PK01</td>
+                    <td>2120</td>
+                    <td>6000</td>
+                    <td>0</td>
+                    <td>bling王</td>
+                    <td>孩子想要一男老师</td>
+                </tr>
+                <tr>
+                    <td>2017/01/14 14：58：00</td>
+                    <td>PK01</td>
+                    <td>2120</td>
+                    <td>6000</td>
+                    <td>0</td>
+                    <td>bling王</td>
+                    <td>孩子想要一男老师</td>
+                </tr>
+                <tr>
+                    <td>2017/01/14 14：58：00</td>
+                    <td>PK01</td>
+                    <td>2120</td>
+                    <td>6000</td>
+                    <td>0</td>
+                    <td>bling王</td>
+                    <td>孩子想要一男老师</td>
+                </tr>
+                <tr>
+                    <td>2017/01/14 14：58：00</td>
+                    <td>PK01</td>
+                    <td>2120</td>
+                    <td>6000</td>
+                    <td>0</td>
+                    <td>bling王</td>
+                    <td>孩子想要一男老师</td>
+                </tr>
+            </table>
+            <table class="tab_left">
+                <tr>
+                    <th>班级名称</th>
+                    <th>课程时间</th>
+                    <th>课程</th>
+                    <th>章节</th>
+                    <th>老师</th>
+                    <th>课程材料</th>
+                    <th>开启教室</th>
+                </tr>
+                <tbody class="getList_left">
+
+                </tbody>
+            </table>
+            <table class="tab_right " style="display: none">
+                <tr>
+                    <th>班级名称</th>
+                    <th>课程时间</th>
+                    <th>课程</th>
+                    <th>章节</th>
+                    <th>老师</th>
+                    <th>课程材料</th>
+                    <th>评语</th>
+                </tr>
+                <tbody class="getList_right">
+
+                </tbody>
+            </table>
+            <!-- 分页配置-->
+            <div id="pageToolbar" onselectstart="return false;"></div>
+            <div class="tab_btn comment_btn">
+                <button class="btn_left" onclick="closeComment()"><span><img src="images/c_back.png"></span>返回</button>
+
+            </div>
+            <div class="comment-box">
+                <div class="comment-header">
+                    <span class="lesson-teacher"></span>课程详情
+                </div>
+                <div class="comment-line" style="margin-top:.5rem;">
+                    <div class="commoent-line-left">上课时间</div>
+                    <div class="commoent-line-right lesson-time">2017-12-18 Money 19：00</div>
+                </div>
+                <div class="comment-line">
+                    <div class="commoent-line-left">班级名称</div>
+                    <div class="commoent-line-right lesson-name">TB-17Aug-RZ8389-2*25min</div>
+                </div>
+                <div class="comment-line">
+                    <div class="commoent-line-left">课程</div>
+                    <div class="commoent-line-right lesson-kecheng">2017-12-18 Money 19：00</div>
+                </div>
+                <div class="comment-line">
+                    <div class="commoent-line-left">课节</div>
+                    <div class="commoent-line-right lesson-kejie">2017-12-18 Money 19：00</div>
+                </div>
+                <div class="comment-line">
+                    <div class="commoent-line-left">关键单词</div>
+                    <div class="commoent-line-right lesson-keyword">2017-12-18 Money 19：00</div>
+                </div>
+                <div class="comment-line">
+                    <div class="commoent-line-left">关键句子</div>
+                    <div class="commoent-line-right lesson-dialog">2017-12-18 Money 19：00</div>
+                </div>
+                <div class="comment-line">
+                    <div class="commoent-line-left">目标</div>
+                    <div class="commoent-line-right lesson-target">2017-12-18 Money 19：00</div>
+                </div>
+                <div class="comment-line">
+                    <div class="commoent-line-left">阅读</div>
+                    <div class="commoent-line-right lesson-read">2017-12-18 Money 19：00</div>
+                </div>
+                <div class="comment-line">
+                    <div class="commoent-line-left">自然拼读</div>
+                    <div class="commoent-line-right lesson-pure-read">2017-12-18 Money 19：00</div>
+                </div>
+                <div class="comment-line" style="margin-bottom:.5rem;">
+                    <div class="commoent-line-left">出勤</div>
+                    <div class="commoent-line-right lesson-attendance" style="color:#00ad9f">2017-12-18 Money 19：00</div>
+                </div>
+            </div>
+            <div class="comment-box">
+                <div class="comment-inside-box">
+                    <div>
+                        <span>注意力：</span><span class="comment-d-1">学员在上课期间都能保持注意力，积极互动，主动回答问题</span>
+                    </div>
+                    <div class="divid-line"></div>
+                    <div>
+                        <span>Concentration ：</span><span class="comment-d-1-1">Student remained attentive throughout the whole class, took an active part in the class and was eager to answer.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="comment-box">
+                <div class="comment-inside-box">
+                    <div>
+                        <span> 阅读流利度：</span><span class="comment-d-2">学员在上课期间都能保持注意力，积极互动，主动回答问题</span>
+                    </div>
+                    <div class="divid-line"></div>
+                    <div>
+                        <span>Fluency ：</span><span class="comment-d-2-1">Student remained attentive throughout the whole class, took an active part in the class and was eager to answer.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="comment-box">
+                <div class="comment-inside-box">
+                    <div>
+                        <span>发音：</span><span class="comment-d-3">学员在上课期间都能保持注意力，积极互动，主动回答问题</span>
+                    </div>
+                    <div class="divid-line"></div>
+                    <div>
+                        <span>Pronunciation：</span><span class="comment-d-3-1">Student remained attentive throughout the whole class, took an active part in the class and was eager to answer.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="comment-box">
+                <div class="comment-inside-box">
+                    <div>
+                        <span>阅读理解力：</span><span class="comment-d-4">学员在上课期间都能保持注意力，积极互动，主动回答问题</span>
+                    </div>
+                    <div class="divid-line"></div>
+                    <div>
+                        <span>Reading comprehension ：</span><span class="comment-d-4-1">Student remained attentive throughout the whole class, took an active part in the class and was eager to answer.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="comment-box">
+                <div class="comment-inside-box">
+                    <div>
+                        <span>听力理解力：</span><span class="comment-d-5">学员在上课期间都能保持注意力，积极互动，主动回答问题</span>
+                    </div>
+                    <div class="divid-line"></div>
+                    <div>
+                        <span>Listening comprehension：</span><span class="comment-d-5-1">Student remained attentive throughout the whole class, took an active part in the class and was eager to answer.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="comment-box">
+                <div class="comment-inside-box">
+                    <div>
+                        <span>教师评语：</span><span class="comment-d-6">学员在上课期间都能保持注意力，积极互动，主动回答问题</span>
+                    </div>
+                    <div class="divid-line"></div>
+                    <div>
+                        <span>Teacher's Comments：</span><span class="comment-d-6-1">Student remained attentive throughout the whole class, took an active part in the class and was eager to answer.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="comment-box" style="height:0;margin-top:.84rem;">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    const apiUrl = 'http://39.106.15.229:7892/';
+    //const apiUrl='http://192.168.1.192:8080/';
+    const config = {
+        'access_token': sessionStorage.getItem("authorization_code"),
+        'phone': sessionStorage.getItem("phone_num"),
+        'statusScope': 1,
+        'page': 1,
+        'limit': 10,
+        'choosePageSize': '显示10条'
+    };
+    var totalnum123;
+    var waitNum123 = 0,
+        finishNum123 = 0;
+    //console.log(sessionStorage.getItem("inOrOut"))
+    var $cont_header = $('.cont_header');
+    var $tab_cont_left = $('.tab_left');
+    var $tab_cont_right = $('.tab_right');
+
+
+
+    //上传图片
+    function doUpload() {
+        var formdata = new FormData();
+        // 上传到服务器的字段名称
+        formdata.append("pic", $('#file')[0].files[0]);
+        formdata.append("phone", config.phone);
+        $.ajax({
+            url: apiUrl + 'ruser/v1/upload/pic' + '?access_token=' + config.access_token,
+            type: 'POST',
+            cache: false,
+            data: formdata,
+            timeout: 5000,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function(returndata) {
+                console.log(returndata);
+                getUseraInfos();
+
+            },
+            error: function(returndata) {
+                console.log(returndata);
+            }
+        });
+    }
+    //分页配置
+    var page = new Paging();
+
+    //添加上拉选项
+
+    function changePageSize(e) {
+        console.log(e)
+        $('.p-page-size ul').toggle();
+        slectPageSize();
+        return;
+    };
+
+    function slectPageSize() {
+        $('.p-page-size ul li').click(function() {
+            console.log($(this).html());
+            var choosePageSize = $(this).html()
+            var size = parseInt(choosePageSize.substr(0, 2))
+                //console.log(size);
+
+            changeStatus(1, size, config.statusScope);
+            config.choosePageSize = '显示' + choosePageSize;
+            $('.p-page-size span').html('显示' + choosePageSize);
+        })
+    }
+
+
+    //点击切换按钮样式
+    $('.tab_btn button').click(function() {
+        $(this).addClass('btnActive').siblings().removeClass('btnActive')
+    });
+    //改变状态获取列表数据
+    function changeStatus(page, size, status) {
+        console.log(status)
+        config.statusScope = status;
+        getList(page, size)
+    }
+
+    //获取列表
+    function getList(start, limit) {
+        axios.interceptors.request.use(config => {
+            $('body').mLoading("show"); //隐藏loading组件
+            return config
+        }, error => {
+            return Promise.reject(error)
+        });
+        axios.interceptors.response.use(data => { // 响应成功关闭loading
+            $('body').mLoading("hide");
+            return data
+        }, error => {
+            return Promise.reject(error)
+        });
+        axios.get(apiUrl + 'ruser/v1/getCourseInLesson/' + config.statusScope + '/' + config.phone + '?access_token=' + config.access_token + "&page=" + start + "&limit=" + limit)
+            .then(function(response) {
+                console.log('opdoasdadsad')
+                if (response.data.code == 200) {
+                    const dataObj = response.data.result.data.list;
+                    const totalCount = response.data.result.data.count;
+                    console.log(config.statusScope)
+                    console.log(totalCount)
+                    config.statusScope == 1 ? $('#wait-lessons').html(totalCount) : $('#complete-lessons').html(totalCount)
+                    page.render({
+                        count: totalCount,
+                        pagesize: limit,
+                        current: start
+                    });
+                    console.log(dataObj);
+                    //初始化后，动态修改配置
+                    var html = '';
+                    if (config.statusScope == 1) {
+                        waitNum123 = parseInt(totalCount);
+                        console.log(waitNum123 + '--' + finishNum123 + '--' + totalnum123)
+                            /*waitNum123 = 0;
+                            finishNum123 = 0;
+                            totalnum123 = undefined;*/
+                        if (!waitNum123 && !finishNum123 && !totalnum123) {
+                            console.log('bushishiling')
+                            $('.cont').hide();
+                            $('.large-warn').show();
+                            return false;
+
+                        } else {
+                            console.log('shiling')
+                        }
+                        console.log('显示左边1')
+                        $tab_cont_left.css('display', 'table');
+                        $tab_cont_right.css('display', 'none');
+                        for (var i = 0; i < dataObj.length; i++) {
+                            html += '<tr>\n' +
+                                '                        <td>' + dataObj[i].class_name + '</td>\n' +
+                                '                        <td>' + dataObj[i].startTime + '</td>\n' +
+                                '                        <td style="white-space : nowrap ">' + maxlength(dataObj[i].course_name, 34) + '</td>\n' +
+                                '                        <td>' + maxlength(dataObj[i].name, 24) + '</td>\n' +
+                                '                        <td style="white-space : nowrap">' + dataObj[i].teacherName + '</td>\n' +
+                                '                        <td style="white-space : nowrap ">' + (dataObj[i].preview.fileUrl ? ('<a href="' + dataObj[i].preview.fileUrl + '"><span>预习：</span>' + maxlength(dataObj[i].preview.file_name, 12) + '<span class="down-btn icon-box-add"></span></a>') : '') + '</td>\n' +
+                                '                        <td style="color:#fd5b58;font-weight: bold"><a href="' + dataObj[i].classIn_url + '">开启</a></td>\n' +
+                                '                    </tr>';
+                        }
+                        $('.getList_left').html('').append(html);
+                        $('.p-page-size span').html(config.choosePageSize);
+
+                    } else {
+                        console.log('显示右边1')
+                        $tab_cont_left.css('display', 'none');
+                        $tab_cont_right.css('display', 'table');
+                        for (var i = 0; i < dataObj.length; i++) {
+                            html += '<tr>\n' +
+                                '                        <td  style="white-space : nowrap">' + dataObj[i].class_name + '</td>\n' +
+                                '                        <td  style="white-space : nowrap">' + dataObj[i].startTime + '</td>\n' +
+                                '                        <td style="white-space : nowrap ">' + maxlength(dataObj[i].course_name, 34) + '</td>\n' +
+                                '                        <td  style="white-space : nowrap">' + maxlength(dataObj[i].name, 24) + '</td>\n' +
+                                '                        <td style="white-space : nowrap">' + dataObj[i].teacherName + '</td>\n' +
+                                '                        <td style="white-space : nowrap ">' + (dataObj[i].preview.fileUrl ? ('<a href="' + dataObj[i].preview.fileUrl + '"><span>预习：</span>' + maxlength(dataObj[i].preview.file_name, 12) + '<span class="down-btn icon-box-add"></span></a>') : '') + '<br>' + (dataObj[i].review.fileUrl ? ('<a href="' + dataObj[i].review.fileUrl + '"><span>预习：</span>' + maxlength(dataObj[i].review.file_name, 12) + '<span class="down-btn icon-box-add"></span></a>') : '') + '</td>\n' +
+                                '                        <td style="color:#fd5b58;font-weight: bold"><a style="cursor: pointer" onclick="checkComment(' + dataObj[i].id + ',' + dataObj[i].class_lesson_id + ',' + '\'' + dataObj[i].teacherName + '\'' + ')">点击查看</a></td>\n' +
+                                '                    </tr>';
+                        }
+                        $('.getList_right').html('').append(html);
+                        $('.p-page-size span').html(config.choosePageSize);
+                    }
+                } else {
+                    return
+                }
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    }
+    //获取用户信息
+    function getUseraInfos() {
+        axios.get(apiUrl + 'ruser/v1/get/courseInAndRuserInformation/' + config.phone + '?access_token=' + config.access_token)
+            .then(function(response) {
+                var data = response.data.result;
+                sessionStorage.setItem("chineseName", data.chineseName);
+                if (data.englishName == null) {
+                    data.englishName = 'ProudKids'
+                }
+                sessionStorage.setItem("englishName", data.englishName);
+                var pics = data.userPic == null ? "./images/user_img.png" : 'http://' + data.userPic
+                console.log(pics)
+                var html = '';
+                html += '<div class="user_img">\n' +
+                    '                        <img src="' + pics + '" alt="">\n' +
+                    //                    '                        <img src="./images/addImg.png" alt="" class="addImg">\n' +
+                    '                           <form id= "uploadForm">\n' +
+                    '                             <a href="javascript:;" class="file">\n' +
+                    '                             <input type="file" name="" onchange="doUpload()"  id="file">\n' +
+                    '                             </a>\n' +
+                    '                            </form>' +
+                    '                    </div>\n' +
+                    '                    <div class="user_name">\n' +
+                    '                        <h2>' + data.englishName + '</h2>\n' +
+                    '                        <span>' + data.chineseName + '</span>\n' +
+                    '                    </div>\n' +
+                    '                    <div class="user_phone">\n' +
+                    '                        <img src="./images/phone.png" alt="" class="phone">\n' +
+                    '                        <span>绑定手机：' + data.phone + '</span>\n' +
+                    '                    </div>\n' +
+                    '                    <div class="user_classId">\n' +
+                    '                        <img src="./images/student.png" alt="" class="classId">\n' +
+                    '                        <span>学号：' + data.codeTag + '</span>\n' +
+                    '                    </div>\n' +
+                    '                    <div class="user_record">\n' +
+                    '                        <span class="record_info"></span>（剩余课时：<span class="num" id="num123">' + '' + '</span>）\n' +
+                    '                    </div>'
+                $cont_header.html(html);
+                setTimeout(function() {
+                    $('#num123').text(totalnum123)
+                }, 150);
+                $('.user-name').html(data.chineseName)
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    }
+
+    //透明弹窗
+    function shadowToast(texts, num) {
+        var shadow = "<div id='shadow' style='position:fixed;z-index:30000;top:-2rem;width: 100%;height:150%;background-color:rgba(83,20,20,.73);'></div>"
+        var alertBox = "<div id='alert-box' style='position: fixed;\n" +
+            "  z-index: 30001;\n" +
+            "  left: 50%;\n" +
+            "  top: 50%;\n" +
+            "  width: 3.6rem;\n" +
+            "  height: 3.14rem;\n" +
+            "  -webkit-transform: translate(-50%,-50%);\n" +
+            "   -moz-transform: translate(-50%,-50%);\n" +
+            "  -o-transform: translate(-50%,-50%);\n" +
+            "  transform: translate(-50%,-50%);\n" +
+            "  background-color: #ffffff;\n" +
+            "  border-radius:.36rem;\n" +
+            "  text-align: center;'><h4 id='txt1' style='font-size: .36rem;\n" +
+            "  color: #ff7d7b;padding-top:.62rem;line-height: .36rem;display: block;width: 100%;'></h4><p style=' font-size: .24rem;\n" +
+            "  color: #a2a2a2;padding-top: .2rem;padding-bottom:.44rem;'>点击确定返回</p><a onclick='nextPage()' style='display: block;\n" +
+            "  width: 1.62rem;\n" +
+            "  height:.56rem;\n" +
+            "  border-radius: .28rem;\n" +
+            "  background-color: #fd5b58;\n" +
+            "  text-align: center;\n" +
+            "  line-height: .56rem;\n" +
+            "  color: #ffffff;\n" +
+            "  font-size: .28rem;\n" +
+            "  margin: auto; cursor: pointer'>确定</a></div>";
+
+        // 追加新元素
+        $('body').append(alertBox);
+        $('body').append(shadow);
+        $('#txt1').html(texts);
+    }
+
+    function nextPage() {
+        window.location.href = './login.html?pageStatus=2';
+    }
+
+
+    function signOut() {
+        sessionStorage.setItem("inOrOut", false);
+        window.location.href = './index.html';
+    }
+
+    function checkComment(id, clid, teacherName) {
+        console.log(teacherName)
+        var teacherName = teacherName
+        axios.get(apiUrl + 'ruser/v1/get/comment/' + id + '/' + clid + '/' + config.phone + '?access_token=' + config.access_token)
+            .then(function(response) {
+                var data = response.data.result;
+
+                if (data == '暂无评论') {
+                    alert(data)
+                    return
+                } else {
+
+                }
+                console.log(data)
+                $('.tab_btn,.tab_left,.tab_right,#pageToolbar').css({
+                    "display": "none"
+                })
+                $('.comment-box,.comment_btn').css({
+                    "display": "block"
+                })
+
+                $('.comment-d-1').text(cutChinese(data.concentrationShow))
+                $('.comment-d-1-1').text(cutEnglish(data.concentrationShow))
+                $('.comment-d-2').text(cutChinese(data.fluencyShow))
+                $('.comment-d-2-1').text(cutEnglish(data.fluencyShow))
+                $('.comment-d-3').text(cutChinese(data.pronunciationShow))
+                $('.comment-d-3-1').text(cutEnglish(data.pronunciationShow))
+                $('.comment-d-4').text(cutChinese(data.comprehensionShow))
+                $('.comment-d-4-1').text(cutEnglish(data.comprehensionShow))
+                $('.comment-d-5').text(cutChinese(data.listenComprehensionShow))
+                $('.comment-d-5-1').text(cutEnglish(data.listenComprehensionShow))
+                $('.comment-d-6').text(data.comment_fanyi)
+                $('.comment-d-6-1').text(data.comment)
+                $('.lesson-time').text(data.lesson.startTime)
+                $('.lesson-name').text(data.lesson.class_name)
+                $('.lesson-kecheng').text(data.lesson.course_name)
+                $('.lesson-kejie').text(data.lesson.name)
+                $('.lesson-keyword').text(data.lesson.keywords)
+                $('.lesson-dialog').text(data.lesson.keysentences)
+                $('.lesson-target').text(data.lesson.objective)
+                $('.lesson-read').text(data.lesson.reading)
+                $('.lesson-pure-read').text(data.lesson.phonics)
+                $('.lesson-attendance').text(data.attendenceShow)
+                $('.lesson-teacher').text(sessionStorage.getItem('englishName'))
+
+
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    }
+
+    function closeComment() {
+        console.log('fanhui')
+        $('.tab_btn,.tab_right,#pageToolbar').css({
+            "display": "block"
+        })
+        $('.comment-box,.comment_btn').css({
+            "display": "none"
+        })
+    }
+
+    //判断中英文
+    function CheckChinese(obj, val) {
+        var reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
+        if (reg.test(val)) {
+            alert("不能输入汉字！");
+            var strObj = document.getElementById(obj);
+            strObj.value = "";
+            strObj.focus();
+        }
+    }
+    //截取中英文
+    function cutChinese(str) {
+        /*var str='helloworld';
+        var num=str.indexOf('o');//返回4*/
+        var num = str.indexOf(' ')
+        console.log(num + 'ccccccccc')
+        var chinese = str.slice(0, num)
+        console.log(chinese)
+        return (chinese)
+    }
+
+    function cutEnglish(str) {
+        /*var str='helloworld';
+        var num=str.indexOf('o');//返回4*/
+        var num = str.indexOf(' ')
+        console.log(num + 'ccccccccc')
+        var chinese = str.slice(num + 1, str.length)
+        console.log(chinese)
+        return (chinese)
+    }
+    //限制字段长度
+    function maxlength(arg, len) {
+        var strs1 = ''
+        if (arg.length <= len) {
+            strs1 = arg
+        } else {
+            strs1 = arg.slice(0, len) + '...';
+        }
+        //console.log(strs1+'---')
+        return strs1
+    }
+
+    /*var str = '动回答问题 Student remained attentive throughout the whole class,';
+    cutChinese(str)
+    cutEnglish(str)*/
+
+    $(function() {
+
+        if (sessionStorage.getItem("inOrOut") == 'true') {
+            getUseraInfos();
+            page.init({
+                target: $('#pageToolbar'),
+                pagesize: 10,
+                count: 100,
+                current: 1,
+                changePagesize: function(pagecount, size, count) {
+                    getList(size, pagecount); //select改变时
+                },
+                callback: function(pagecount, size, count) {
+                    getList(pagecount, size); //点击按钮
+                }
+            });
+            //页面初始化配置
+
+            function getList2(start, limit) {
+                axios.interceptors.request.use(config => {
+                    $('body').mLoading("show"); //隐藏loading组件
+                    return config
+                }, error => {
+                    return Promise.reject(error)
+                });
+                axios.interceptors.response.use(data => { // 响应成功关闭loading
+                    $('body').mLoading("hide");
+                    return data
+                }, error => {
+                    return Promise.reject(error)
+                });
+                axios.get(apiUrl + 'ruser/v1/getCourseInLesson/' + 2 + '/' + config.phone + '?access_token=' + config.access_token + "&page=" + start + "&limit=" + limit)
+                    .then(function(response) {
+                        console.log(response.data.result)
+                            /*const dataObj=eval("("+response.data.result+")").data.list;
+                            const totalCount = eval("("+response.data.result+")").data.count;*/
+                        if (response.data.result.code == 1007) {
+                            console.log('您还未购买正式课')
+                            $('.cont').hide();
+                            $('.large-warn').show();
+                            return false;
+                        }
+                        const dataObj = response.data.result.data.list;
+
+                        const totalCount = response.data.result.data.count;
+                        finishNum123 = parseInt(response.data.result.data.count);
+                        console.log(response.data.result.data.totalcourse + '1111')
+                        setTimeout(function() {
+                            totalnum123 = response.data.result.data.totalcourse
+                            $('#num123').text(totalnum123)
+                        }, 150);
+
+                        $('#complete-lessons').html(totalCount);
+                        //$('#wait-lessons').html(totalCount);
+                        console.log(page)
+                        page.render({
+                            count: totalCount,
+                            pagesize: limit,
+                            current: start
+                        });
+                        console.log(dataObj);
+                        //初始化后，动态修改配置
+                        var html = '';
+                        if (config.statusScope == 1) {
+                            console.log('左边显示')
+                                //console.log(data.data)
+                                /*$tab_cont_left.css('display','block');
+                                $tab_cont_right.css('display','none');*/
+                            for (var i = 0; i < dataObj.length; i++) {
+                                html += '<tr>\n' +
+                                    '                        <td>' + dataObj[i].class_name + '</td>\n' +
+                                    '                        <td>' + dataObj[i].startTime + '</td>\n' +
+                                    '                        <td style="white-space : nowrap ">' + dataObj[i].course_name + '</td>\n' +
+                                    '                        <td>' + dataObj[i].name + '</td>\n' +
+                                    '                        <td>' + dataObj[i].teacherName + '</td>\n' +
+                                    '                        <td style="white-space : nowrap "><a href="' + dataObj[i].preview.fileUrl + '">' + dataObj[i].preview.file_name + '</td>\n' +
+                                    '                        <td style="color:#fd5b58;font-weight: bold">暂不开启</td>\n' +
+                                    '                    </tr>';
+                            }
+                            $('.getList_left').html('').append(html);
+                            $('.p-page-size span').html(config.choosePageSize);
+
+                        } else {
+                            console.log('右边显示')
+                                /*$tab_cont_left.css('display','none');
+                                $tab_cont_right.css('display','block');*/
+                            for (var i = 0; i < dataObj.length; i++) {
+                                html += '<tr>\n' +
+                                    '                        <td>' + dataObj[i].class_name + '</td>\n' +
+                                    '                        <td>' + dataObj[i].startTime + '</td>\n' +
+                                    '                        <td>' + dataObj[i].course_name + '</td>\n' +
+                                    '                        <td>' + dataObj[i].name + '</td>\n' +
+                                    '                        <td>' + dataObj[i].teacherName + '</td>\n' +
+                                    '                        <td>' + dataObj[i].preview.file_name + '</td>\n' +
+                                    '                        <td style="color:#fd5b58;font-weight: bold;cursor: pointer">点击查看</td>\n' +
+                                    '                    </tr>';
+                            }
+                            $('.getList_right').html('').append(html);
+                            $('.p-page-size span').html(config.choosePageSize);
+                            $tab_cont_left.css('display', 'block');
+                            $tab_cont_right.css('display', 'none');
+                        }
+
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+
+            }
+
+            getList2(2, 10);
+            getList(1, 10);
+
+
+            console.log(config.choosePageSize + 'xxxxxxxxxx')
+
+        } else {
+            console.log(sessionStorage.getItem("inOrOut"));
+            shadowToast('您还未登录<br>请登录')
+            return false;
+        }
+
+    })
+</script>

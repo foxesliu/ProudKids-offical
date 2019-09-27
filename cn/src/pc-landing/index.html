@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Proud Kids 在线固定外教小班课</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link type="text/css" rel="stylesheet" href="css/index.css" />
+
+</head>
+
+<body>
+    <div class="bg-box relative">
+        <img src="./images/headbg.png" alt="">
+    </div>
+    <div class="container-box">
+        <div class="container">
+            <div class="main-container">
+                <div class="title">
+                    <img src="./images/headtext.png" alt="">
+                </div>
+                <div class="content">
+                    <img src="./images/1.png" alt="">
+                    <img src="./images/2.png" alt="">
+                    <img src="./images/3.png" alt="">
+                    <img src="./images/4.png" alt="">
+                    <img src="./images/5.png" alt="">
+                    <img src="./images/6.png" alt="">
+                    <img src="./images/7.png" alt="">
+                    <img src="./images/8.png" alt="">
+                    <img src="./images/9.png" alt="">
+                    <div class="btmlogo">
+                        <img src="./images/bottomlogo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fixed-box">
+            <div class="flex-box">
+                <p class="free">免费</p>
+                <div class="text">
+                    <p>领取1节中教课+ 1节外教课</p>
+                    <p>价值<span style="color:#ff7266;display: inline-block;margin: 0 3px;">258 元</span>的体验课</p>
+                </div>
+            </div>
+            <div class="phone-box">
+                <input type="tel" placeholder="请这里输入手机号码" maxlength="11" id="phone">
+                <a class="getPhone">领取</a>
+                <p class="tipmes hidden">请输入正确的手机号码</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        var phoneNumber;
+        var cid;
+
+        $(window).ready(function() {
+            cid = getRequest().cid
+            sessionStorage.setItem('cid', cid);
+            var bodyHeight = $('.container').height();
+            var gbBoxHeight = $('.bg-box').height();
+            console.log(bodyHeight)
+            $('.container-box').height(bodyHeight - gbBoxHeight);
+            $('.container-box').css('background-image', 'linear-gradient(180deg, #FF7A62 0%, #ff8358 100%)')
+        });
+        $('.getPhone').click(function() {
+            phoneNumber = $.trim($('#phone').val());
+            if (phoneNumber.length == 11 && (/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(phoneNumber))) {
+                $('#phone').siblings('p').addClass('hidden');
+                window.location.href = 'login.html';
+                localStorage.setItem('phoneText', phoneNumber)
+            } else {
+                $('#phone').siblings('p').removeClass('hidden');
+            }
+        })
+    </script>
+
+</body>
+
+</html>

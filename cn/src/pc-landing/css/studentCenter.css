@@ -1,0 +1,101 @@
+.content-box {
+  background: url(../images/bg1.png) no-repeat;
+  width: 1200px;
+  height: 401px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 20px 0px rgba(201, 201, 201, 0.25);
+  border-radius: 8px;
+  display: flex;
+}
+.content-box .border-box {
+  height: 340px;
+  border: 1px solid #e2e2e2;
+  margin-top: 35px;
+}
+.content-box .newStudent,
+.content-box .oldStudent {
+  width: 599px;
+  padding: 83px 0 0 144px;
+  box-sizing: border-box;
+}
+.content-box .newStudent .p1,
+.content-box .oldStudent .p1 {
+  font-family: MicrosoftYaHeiUILight;
+  color: #666666;
+  font-size: 36px;
+  font-weight: 100;
+}
+.content-box .newStudent .p2,
+.content-box .oldStudent .p2 {
+  color: #bdbdbd;
+  font-size: 16px;
+}
+.content-box .newStudent .input-box,
+.content-box .oldStudent .input-box {
+  margin-top: 25px;
+}
+.content-box .newStudent .input-box label,
+.content-box .oldStudent .input-box label {
+  position: relative;
+  display: inline-block;
+  font-size: 13px;
+  color: #d6d6d6;
+  padding-left: 22px;
+  margin-bottom: 5px;
+}
+.content-box .newStudent .input-box label span,
+.content-box .oldStudent .input-box label span {
+  position: absolute;
+  top: -9px;
+  display: inline-block;
+  margin-left: 2px;
+  color: #FF706E;
+  font-size: 8px;
+  margin-top: 5px;
+}
+.content-box .newStudent .input-box i,
+.content-box .oldStudent .input-box i {
+  display: inline-block;
+  width: 15px;
+  height: 25px;
+  background: url(../images/hui.png) no-repeat;
+  background-size: cover;
+}
+.content-box .newStudent .input-box input,
+.content-box .oldStudent .input-box input {
+  display: inline-block;
+  width: 275px;
+  border: none;
+  border-bottom: 1px solid #FF706E;
+  font-size: 16px;
+  color: #666666 !important;
+  outline: none;
+  line-height: 25px;
+  padding-left: 3px;
+  margin-left: 4px;
+}
+.content-box .newStudent .input-box .tipmes,
+.content-box .oldStudent .input-box .tipmes {
+  margin-top: 4px;
+  font-size: 10px;
+  color: #ff706e;
+  padding-left: 22px;
+}
+.content-box .oldStudent {
+  width: 599px;
+  padding: 83px 0 0 123px;
+}
+.addNew,
+.login {
+  display: block;
+  width: 275px;
+  height: 36px;
+  font-size: 14px;
+  background-image: linear-gradient(180deg, #ff6f6f 0%, #ff8358 100%);
+  border-radius: 3px;
+  margin-top: 35px;
+  line-height: 36px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+}

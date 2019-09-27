@@ -1,0 +1,128 @@
+.login-box {
+  width: 100%;
+  height: 401px;
+  box-shadow: 0px 2px 20px 0px rgba(201, 201, 201, 0.25);
+  border-radius: 8px;
+  background: url(../images/bg1.png) no-repeat;
+  background-size: cover;
+}
+.login-box .input-box {
+  width: 275px;
+  height: 68px;
+  margin: 0 auto;
+  margin-top: 15px;
+  box-sizing: border-box;
+}
+.login-box .input-box label {
+  position: relative;
+  font-size: 13px;
+  color: #d6d6d6;
+  padding-left: 5px;
+}
+.login-box .input-box label span {
+  position: absolute;
+  top: -9px;
+  display: inline-block;
+  margin-left: 2px;
+  color: #FF706E;
+  font-size: 8px;
+  margin-top: 5px;
+}
+.login-box .input-box input {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 16px;
+  color: #666666 !important;
+  outline: none;
+  line-height: 34px;
+  background: #ffffff !important;
+  padding-left: 5px;
+}
+.login-box .input-box #trigger1 {
+  box-sizing: border-box;
+  width: 275px;
+  line-height: 34px;
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  padding-left: 5px;
+  color: #666666;
+}
+.login-box .input-box #trigger1 span {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 35px;
+  right: 15px;
+  border-top: 6px solid #ff635d;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+.login-box .input-box #get-message {
+  position: absolute;
+  display: inline-block;
+  width: 75px;
+  text-align: center;
+  right: 0;
+  top: 31px;
+  border: none;
+  color: #ff706e;
+  font-size: 12px;
+  text-decoration: underline;
+}
+.login-box .input-box .rotate {
+  transform: rotate(180deg);
+}
+.login-box .input-box .tipmes {
+  margin-top: 4px;
+  font-size: 10px;
+  color: #ff706e;
+  padding-left: 5px;
+}
+.login-box .input-box .all {
+  width: 100%;
+  position: absolute;
+  top: 55px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 20px 0px rgba(227, 227, 227, 0.5);
+  padding: 10px 0;
+}
+.login-box .input-box .all li {
+  padding-left: 25px;
+  line-height: 38px;
+  font-size: 10px;
+  color: #8a8a8a;
+}
+.login-box .input-box .all li b {
+  font-size: 14px;
+  color: #5b5b5b;
+  margin-right: 8px;
+}
+.login-box #next-step,
+.login-box #complete-button {
+  display: block;
+  width: 275px;
+  height: 36px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background-image: linear-gradient(180deg, #ff6f6f 0%, #ff8358 100%);
+  border-radius: 3px;
+  margin: auto;
+  margin-top: 35px;
+  line-height: 36px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+.login-box .forget {
+  width: 75px;
+  font-size: 12px;
+  color: #888888;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 12px;
+}

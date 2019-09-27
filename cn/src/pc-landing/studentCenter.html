@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="css/studentCenter.css" />
+    <link type="text/css" rel="stylesheet" href="css/common.css" />
+    <script src="js/jquery.min.js"></script>
+    <title>学生中心</title>
+</head>
+
+</div>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <img src="./images/loginLogo.png" alt="" id="logo">
+        </div>
+    </div>
+    <div class="container">
+        <p class="title">学生中心</p>
+        <div class="content-box">
+            <div class="newStudent">
+                <p class="p1">我是新生</p>
+                <p class="p2"><span style="color:#ff9492">免费领取</span>1节中教课+ 1节外教课价值258的体验课</p>
+                <div class="input-box">
+                    <label class="tips canSee">您的手机号码<span>*</span></label>
+                    <div style="display:flex;">
+                        <i></i>
+                        <input id="phone" type="tel" maxlength="11" placeholder="请输入手机号码">
+                    </div>
+                    <p class="tipmes canSee">请输入正确的手机号码</p>
+                </div>
+                <a class="addNew toPage" style="cursor: pointer">立即注册</a>
+            </div>
+            <div class="border-box"></div>
+            <div class="oldStudent">
+                <p class="p1">已经注册学员</p>
+                <p class="p2 canSee"><span style="color:#ff9492">免费领取</span>1节中教课+ 1节外教课价值258的体验课</p>
+                <div class="input-box">
+                    <label class="tips canSee">您的手机号码<span>*</span></label>
+                    <div style="display:flex;">
+                        <i></i>
+                        <input id="phone" type="tel" maxlength="11" placeholder="请输入手机号码">
+                    </div>
+                    <p class="tipmes canSee">请输入正确的手机号码</p>
+                </div>
+                <a class="login toPage" style="cursor: pointer">登录</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var phoneText;
+    var gotoPage = false;
+    $('#logo').click(function() {
+        window.location.href = '../home.html'
+    })
+    $('.input-box input').focus(function() {
+        $(this).parent().siblings('label').removeClass('canSee');
+        $(this).siblings('i').css('background', 'url(./images/orange.png)')
+    })
+    $('.input-box input').blur(function() {
+        if (!$(this).val()) {
+            $(this).parent().siblings('label').addClass('canSee');
+            $(this).siblings('i').css('background', 'url(./images/hui.png)')
+        } else {
+            $(this).parent().siblings('label').removeClass('canSee');
+
+        }
+    })
+    $('.input-box input').change(function() {
+        phoneText = $.trim($(this).val());
+        console.log(phoneText);
+        if (phoneText.length == 11 && (/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(phoneText))) {
+            $(this).parent().siblings('p').addClass('canSee');
+            localStorage.setItem('phoneText', phoneText);
+            gotoPage = true;
+        } else {
+            $(this).parent().siblings('p').removeClass('canSee');
+        }
+        if (phoneText.length == 0) {
+            $(this).parent().siblings('p').addClass('canSee');
+        }
+    })
+    $('.toPage').click(function() {
+        phoneText = $.trim($(this).siblings('.input-box').children().find('input').val());
+        console.log(phoneText)
+        if (phoneText.length == 11 && (/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(phoneText))) {
+            $(this).parent().siblings('p').addClass('canSee');
+            localStorage.setItem('phoneText', phoneText);
+            gotoPage = true;
+        } else {
+            $(this).parent().siblings('p').removeClass('canSee');
+        }
+        if (phoneText.length == 0) {
+            $(this).parent().siblings('p').addClass('canSee');
+        }
+        if (!gotoPage) {
+            $(this).siblings('.input-box').children('.tipmes').removeClass('canSee')
+        }
+    })
+    $('.addNew').click(function() {
+        if (gotoPage) {
+            window.location.href = 'login.html'
+        }
+    })
+    $('.login').click(function() {
+        if (gotoPage) {
+            window.location.href = 'studentLogin.html'
+        }
+    })
+</script>
+
+</html>

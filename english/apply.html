@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Proud Kids</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,
+           maximum-scale=1.0, user-scalable=no" />
+    <link type="text/css" rel="stylesheet" href="./css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="./css/animate.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/global.css" />
+    <link type="text/css" rel="stylesheet" href="./css/css.css" />
+    <script>
+        var pageIndex = 4;
+    </script>
+</head>
+
+<body>
+    <header></header>
+    <article>
+        <div class="jobs-container apply-container">
+            <div class="head font-varelaround">
+                <div class="page-mini-width">
+                    <div class="img"><img src="images/job-topbg.png" /></div>
+                    <div class="p font-varelaround">TUTOR PROFILE PAGE</div>
+                </div>
+            </div>
+            <div class="apply-box">
+                <div class="p">
+                    <div class="pull-left width50">
+                        <div class="label">
+                            <span>First name</span>
+                            <b>*</b>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="firstName" placeholder="Your First Name" class="width100 tran-all" />
+                            <img class="sure hidden" src="images/sure.png" />
+                            <img class="esc hidden" src="images/esc.png" />
+                        </div>
+                        <div class="warning hidden" data-name="firstName">Please enter your first name</div>
+                    </div>
+                    <div class="pull-right width50">
+                        <div class="label">
+                            <span>Last name</span>
+                            <b>*</b>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="lastName" placeholder="Your Last Name" class="width100 tran-all" />
+                            <img class="sure hidden" src="images/sure.png" />
+                            <img class="esc hidden" src="images/esc.png" />
+                        </div>
+                        <div class="warning hidden" data-name="lastName">Please enter your last name</div>
+                    </div>
+                </div>
+                <div class="p">
+                    <div class="width100">
+                        <div class="label">
+                            <span>Gender</span>
+                            <b>*</b>
+                        </div>
+                        <div class="button-box">
+                            <span class="btn1"><img src="images/man.png">Male
+                                <input type="hidden" value="0"></span>
+                            <span class="btn2"><img src="images/female.png">Female
+                                <input type="hidden" value="1"></span>
+                        </div>
+                        <div class="warning hidden" data-name="gender">Please choose</div>
+                    </div>
+                </div>
+                <div class="p">
+                    <div class="width100">
+                        <div class="label">
+                            <span>Character</span>
+                            <b>*</b>
+                        </div>
+                        <div class="button-box1">
+                            <span><i></i>Full-Time<input type="hidden" value="0"></span>
+                            <span><i></i>Part-Time<input type="hidden" value="1"></span>
+                        </div>
+                        <div class="warning hidden" data-name="gender">Please choose</div>
+                    </div>
+                </div>
+
+
+                <div class="p">
+                    <div class="width100">
+                        <div class="label">
+                            <span>Phone Number</span>
+                            <b>*</b>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="phone" placeholder="Your Phone Number" class="tran-all width100" />
+                            <img class="sure hidden" src="images/sure.png" />
+                            <img class="esc hidden" src="images/esc.png" />
+                        </div>
+                        <div class="warning hidden" data-name="phone">Your Phone Number</div>
+                    </div>
+                </div>
+
+                <div class="p">
+                    <div class="width100">
+                        <div class="label">
+                            <span>E-mail</span>
+                            <b>*</b>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="email" placeholder="Your E-mail" class="tran-all width100" />
+                            <img class="sure hidden" src="images/sure.png" />
+                            <img class="esc hidden" src="images/esc.png" />
+                        </div>
+                        <div class="warning hidden" data-name="email">Please enter your e-mail
+
+                        </div>
+                    </div>
+                </div>
+                <div class="p">
+                    <div class="width100">
+                        <div class="label">
+                            <span>Location (City, State, Country)</span>
+                            <b>*</b>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="city" placeholder="Your location" class="width100 tran-all" />
+                            <img class="sure hidden" src="images/sure.png" />
+                            <img class="esc hidden" src="images/esc.png" />
+                        </div>
+                        <div class="warning hidden" data-name="city">Please enter your location</div>
+                    </div>
+                </div>
+                <div class="p">
+                    <div class="width100">
+                        <div class="label">
+                            <span>Education</span>
+                            <b>*</b>
+                        </div>
+                        <div class="input-div ">
+                            <input id="edvalue" type="text" name="education" placeholder="Please choose your degree" class="width100 tran-all" readonly="value" />
+                            <img id="imgsan" src="./images/sanjiao.png" alt="">
+                            <ul class="select-options">
+                                <li>Bachelors</li>
+                                <li>Masters</li>
+                                <li>Doctorate/PhD</li>
+                                <li>TEFL/TESOL</li>
+                                <li>CELTA</li>
+                                <li>IELTS</li>
+                                <li>BED/Teaching Certification</li>
+                                <li>Other<input type="text" id="other"></li>
+                            </ul>
+                        </div>
+                        <div class="warning hidden" data-name="education">Please choose your degree</div>
+                    </div>
+                </div>
+                <div class="p">
+                    <div class="width100">
+                        <div class="label">
+                            <span>Tutoring or Teaching Experience & Personaility</span>
+                            <b>*</b>
+                        </div>
+                        <div class="input-div">
+                            <textarea class="width100 tran-all" name="experience" placeholder="Your  tutoring or teaching experience & personaility"></textarea>
+                        </div>
+                        <div class="warning hidden" data-name="experience">Please enter your experience</div>
+                    </div>
+                </div>
+                <div class="p">
+                    <div class="width100">
+                        <div class="label">
+                            <span>School Name</span>
+                            <b>*</b>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" name="SchoolName" placeholder="Your school Name" class="width100 tran-all" />
+                            <img class="sure hidden" src="images/sure.png" />
+                            <img class="esc hidden" src="images/esc.png" />
+                        </div>
+                        <div class="warning hidden" data-name="SchoolName">Please enter your school name</div>
+                    </div>
+                </div>
+                <div class="p">
+                    <div class="width100">
+                        <div class="label">
+                            <span>What is your teaching philosophy？</span>
+                            <b>*</b>
+                        </div>
+                        <div class="input-div">
+                            <textarea class="width100 tran-all" name="philosophy" placeholder="Your teaching philosophy"></textarea>
+                        </div>
+                        <div class="warning hidden" data-name="philosophy">Please enter your philosophy </div>
+                    </div>
+                </div>
+                <div class="p">
+                    <div class="width100">
+                        <div class="label">
+                            <span>Video demo</span>
+                            <b>*</b>
+                        </div>
+                        <div class="input-div">
+                            <textarea class="width100 tran-all" name="videoLink" placeholder="Your Video demo link"></textarea>
+                        </div>
+                        <div class="tip">No more than 5 minutes long. Introduce yourself, where you live, your educational background and any experience teaching or working with children. Then teach a small piece of knowledge. </div>
+                        <div class="warning hidden" data-name="videoLink">Please enter your video demo link</div>
+                    </div>
+                </div>
+                <div class="p">
+                    <div class="width100">
+                        <div class="label">
+                            <span>Please upload 3 of your current photographs</span>
+                            <b>*</b>
+                        </div>
+                        <div class="photos">
+                            <div class="img-box">
+                                <input type="file" name="photographs" id="ctn-input1" />
+                                <input type="hidden" id="ctn-input-value1">
+                                <img src="images/add.png" alt="" id="ctn-input-photo1">
+                            </div>
+                            <div class="img-box">
+                                <input type="file" name="photographs" id="ctn-input2" />
+                                <input type="hidden" id="ctn-input-value2">
+                                <img src="images/add.png" alt="" id="ctn-input-photo2">
+                            </div>
+                            <div class="img-box">
+                                <input type="file" name="photographs" id="ctn-input3" />
+                                <input type="hidden" id="ctn-input-value3">
+                                <img src="images/add.png" alt="" id="ctn-input-photo3">
+                            </div>
+                        </div>
+                        <div class="warning hidden" data-name="photographs">Please upload</div>
+                    </div>
+                    <div class="p upload">
+                        <div class="left">
+                            <div class="label">
+                                <span>RESUME(required)</span>
+                                <b>*</b>
+                            </div>
+                            <div class="input-div">
+                                <input type="text" name="filename" disabled placeholder="Choose File" class="width100 tran-all" value="" />
+
+                            </div>
+                            <div class="tip">Upload a Word, PowerPoint or PDF file upto 10 MB.</div>
+                            <div class="warning hidden" data-name="filename">Please upload your file</div>
+                        </div>
+                        <div class="right"><span>+</span></div>
+                        <div class="upload-input">
+                            <input type="file" name="file" accept="file/*" id="ctn-input-file" />
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <div class="tran-all" onclick="submit()">SUBMIT</div>
+                    </div>
+                </div>
+            </div>
+    </article>
+    <footer></footer>
+    <!--<footer onclick="showDialog()"></footer>-->
+    <!--<div class="dialog-container">-->
+    <!--<div class="dialog-box">-->
+    <!--<div class="icon-box"><img src="images/dialog-right.jpg"/></div>-->
+    <!--<div class="title t-hidden pl-20 pr-20">SUBMITTED SUCCESSFULLY</div>-->
+    <!--<div class="pl-20 pr-20 text">We look forward to working with you!</div>-->
+    <!--<div class="button c-pointer" onclick="closeDialog(this)">OK</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <script src="./plugins/jquery.min.js"></script>
+    <script src="./js/js.js"></script>
+    <script>
+        var baseUrl = 'https://ce.proudkids.cn'
+        $(function() {
+            //学历选择
+            $('.select-options').hide();
+            var oldval = $('#edvalue').val()
+            $('#edvalue').click(function() {
+                if (!$(this).hasClass('abc')) {
+                    $(this).addClass('abc')
+                    $('#imgsan').css('transform', 'rotate(0)')
+                    console.log(1)
+                    $('.select-options').stop().slideToggle(300)
+                    $('#edvalue').parent().addClass('select-box')
+                    $('#edvalue').addClass('abc')
+                } else {
+                    $(this).removeClass('abc')
+                    $('.select-options').stop().slideToggle(300)
+                    $('#imgsan').css('transform', 'rotate(90deg)')
+                    $('#edvalue').removeClass('abc')
+                }
+
+            })
+            $('#edvalue').bind('input propertychange', function() {
+                console.log(3)
+            })
+            $('#other').blur(function() {
+                var otherVal = $('#other').val()
+                $('#edvalue').val(otherVal);
+                $('.select-options').slideUp();
+                $('#edvalue').parent().removeClass('select-box')
+            })
+            $('.select-options li').click(function() {
+                //获取options的值 赋值给input
+                var selectedVal = $(this).text()
+                console.log(selectedVal)
+                $('#edvalue').val(selectedVal)
+                if (selectedVal == 'Other') {
+                    selectedVal = '';
+                    $('#edvalue').val(selectedVal)
+                    console.log(2)
+                }
+                if ($('#edvalue').val() != '') {
+
+                    $('.select-options').slideUp()
+                    $('#edvalue').parent().removeClass('select-box')
+                }
+            })
+        })
+
+        $(function() {
+            // 按钮样式控制
+            $('.button-box span').click(function() {
+
+                $(this).addClass('activeBtn')
+                $(this).addClass('checked')
+                $(this).siblings().removeClass("activeBtn");
+                $(this).siblings().removeClass("checked");
+                console.log($('.button-box .checked').find('input').val())
+            })
+            $('.button-box1 span').click(function() {
+
+                $(this).addClass('checked')
+                $(this).addClass('activeBtn')
+                $(this).siblings().removeClass("activeBtn");
+                $(this).siblings().removeClass("checked");
+                console.log($('.button-box1 .checked').find('input').val())
+            })
+            $('.btn1').click(function() {
+                $(this).children().attr('src', 'images/manh.png')
+                $('.btn2').children().attr('src', 'images/female.png')
+            })
+            $('.btn2').click(function() {
+                $(this).children().attr('src', 'images/femaleh.png')
+                $('.btn1').children().attr('src', 'images/man.png')
+            })
+        })
+        $(function() {
+            //照片上传
+            var photographs = {};
+            $("#ctn-input1").on("change", function() {
+                var formData = new FormData();
+                formData.append('file', $('#ctn-input1')[0].files[0]);
+                $.ajax({
+                    url: baseUrl + "/admin/user/upload", //线上
+                    //url: "http://192.168.1.80:9999/admin/user/upload",
+                    type: 'POST',
+                    cache: false,
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json",
+                    beforeSend: function() {
+                        //uploading = true;
+                    },
+                    success: function(data) {
+                        console.log(data.filename);
+                        $('#ctn-input-value1').val(data.filename);
+                        $('#ctn-input-photo1').attr('src', data.filename)
+                        photographs.pc1 = data.filename
+                    }
+                });
+                console.log(photographs)
+            });
+            $("#ctn-input2").on("change", function() {
+                var formData = new FormData();
+                formData.append('file', $('#ctn-input2')[0].files[0]);
+                $.ajax({
+                    url: baseUrl + "/admin/user/upload",
+                    //url: "http://192.168.1.80:9999/admin/user/upload",
+
+                    type: 'POST',
+                    cache: false,
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json",
+                    beforeSend: function() {
+                        //uploading = true;
+                    },
+                    success: function(data) {
+                        console.log(data.filename);
+                        $('#ctn-input-value2').val(data.filename);
+                        $('#ctn-input-photo2').attr('src', data.filename)
+                        photographs.pc2 = data.filename
+                    }
+                });
+                console.log(photographs)
+            });
+            $("#ctn-input3").on("change", function() {
+                var formData = new FormData();
+                formData.append('file', $('#ctn-input3')[0].files[0]);
+                $.ajax({
+                    url: baseUrl + "/admin/user/upload",
+                    type: 'POST',
+                    cache: false,
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json",
+                    beforeSend: function() {
+                        //uploading = true;
+                    },
+                    success: function(data) {
+                        console.log(data.filename);
+                        $('#ctn-input-value3').val(data.filename);
+                        $('#ctn-input-photo3').attr('src', data.filename)
+                        photographs.pc3 = data.filename
+                    }
+                });
+                console.log(photographs)
+            });
+
+        })
+
+        function submit() {
+            var obj = {
+                "firstName": $('[name=firstName]').val(),
+                "lastName": $('[name=lastName]').val(),
+                "email": $('[name=email]').val(),
+                "phone": $('[name=phone]').val(),
+                "videoLink": $('[name=videoLink]').val(),
+                "resume": $('[name=resume]').val(),
+                "addr": $('[name=city]').val(),
+                "character": parseInt($('.button-box1 .checked').find('input').val()),
+                "gender": parseInt($('.button-box .checked').find('input').val()),
+                'education': $('[name=education]').val(),
+                'ep': $('[name=experience]').val(),
+                "schoolName": $('[name=SchoolName]').val(),
+                "philosophy": $('[name=philosophy]').val(),
+                "resume": $('[name=filename]').val(),
+                "photographs": JSON.stringify({
+                    "pc1": $('#ctn-input-value1').val(),
+                    "pc2": $('#ctn-input-value2').val(),
+                    "pc3": $('#ctn-input-value3').val()
+                }),
+
+            };
+            if (!(getRequest()['type'])) {
+                obj.type = 0;
+            } else {
+                obj.type = getRequest()['type']
+            }
+            console.log(obj);
+            var flag = true;
+            if (obj.firstName === '') {
+                $('[data-name=firstName]').show();
+                flag = false;
+            }
+            if (obj.lastName === '') {
+                $('[data-name=lastName]').show();
+                flag = false;
+            }
+            if (obj.email === '') {
+                $('[data-name=email]').show();
+                flag = false;
+            }
+            if (obj.phone === '') {
+                $('[data-name=phone]').show();
+                flag = false;
+            }
+            if (obj.videoLink === '') {
+                $('[data-name=videoLink]').show();
+                flag = false;
+            }
+            if (obj.resume === '') {
+                $('[data-name=filename]').show();
+                flag = false;
+            }
+            if (obj.addr === '') {
+                $('[data-name=city]').show();
+                flag = false;
+            }
+            if (obj.schoolName === '') {
+                $('[data-name=SchoolName]').show();
+                flag = false;
+            }
+            if (obj.philosophy === '') {
+                $('[data-name=philosophy]').show();
+                flag = false;
+            }
+            if ($('#ctn-input-value1').val() === '') {
+                $('[data-name=photographs]').show();
+                flag = false;
+            }
+            if ($('#ctn-input-value2').val() === '') {
+                $('[data-name=photographs]').show();
+                flag = false;
+            }
+            if ($('#ctn-input-value3').val() === '') {
+                $('[data-name=photographs]').show();
+                flag = false;
+            }
+            if (obj.gender === '') {
+                $('[data-name=gender]').show();
+                flag = false;
+            }
+            if (obj.character === '') {
+                $('[data-name=character]').show();
+                flag = false;
+            }
+            if (obj.ep === '') {
+                $('[data-name=experience]').show();
+                flag = false;
+            }
+            if (obj.education === '') {
+                $('[data-name=education]').show();
+                flag = false;
+            }
+            obj.type = 0;
+            console.log(obj);
+            if (flag) {
+                $.ajax({
+                    url: baseUrl + '/ruser/en/website/add',
+                    type: 'POST',
+                    data: JSON.stringify(obj),
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function(response) {
+
+                        if (response.data) {
+                            showDialog('success', '', '', function() {
+
+                                location.href = 'index.html';
+                            });
+                        } else {
+                            showDialog('error', 'Error', 'submit failure');
+                        }
+                    }
+                })
+            } else {
+                showDialog('error', 'Error', 'Please complete');
+            }
+        }
+
+        $('input').focus(function() {
+            $('[data-name]').hide();
+        });
+
+        $("#ctn-input-file").on("change", function() {
+            var formData = new FormData();
+            formData.append('file', $('#ctn-input-file')[0].files[0]);
+            $.ajax({
+                url: baseUrl + "/admin/user/upload",
+                type: 'POST',
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: "json",
+                beforeSend: function() {
+                    //uploading = true;
+                },
+                success: function(data) {
+                    console.log(data);
+                    $('[name=filename]').val(data.filename);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

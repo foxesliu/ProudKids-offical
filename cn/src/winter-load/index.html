@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <title>免费领取Proud Kids体验课</title>
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/flexible.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="audio/html5media.min.js"></script>
+    <script src="audio/video.min.js"></script>
+    <script src="audio/videojs-ie8.min.js"></script>
+    <link rel="stylesheet" href="audio/video-js.css">
+    <link rel="stylesheet" href="css/video.css">
+</head>
+<body style="background-color: #ffe603;padding-bottom: 1.76rem;">
+<div class="top-box-1"><img class="bg-1" src="images/bg_1.png"> <img class="bg-1" src="images/bg_2.png">
+    <div class="video-box">
+        <div class="video-top"></div>
+        <div class="video-inside-box">
+            <video webkit-playsinline playsinline id="my-video" class="video-js vjs-default-skin vjs-big-play-centered"
+                   src="https://files.proudkids.cn/video/6db69941dc7343b402c24da4ab918289.mp4" controls preload="auto"
+                   poster="images/poster.jpg" data-setup="{}">
+                <source src="https://files.proudkids.cn/video/6db69941dc7343b402c24da4ab918289.mp4" type="video/mp4">
+                <p class="vjs-no-js">enable JavaScript <a href="http://videojs.com/html5-video-support/"
+                                                          target="_blank">supports HTML5 video</a></p>您的浏览器不支持Video标签。
+            </video>
+        </div>
+        <img class="video-play" src="images/video-play.png"></div>
+    <div class="course-material"><img src="images/title_1.png"> <img src="images/font-1.png">
+        <div class="content-material">
+            <div><h3>新课标</h3>
+                <p>基于义务英语<br>教育大纲</p></div>
+            <div><h3>培生Big English</h3>
+                <p>覆盖新课标<br>超越新课标</p></div>
+            <div><h3>Raz 分级阅读</h3>
+                <p>国际著名<br>分级阅读</p></div>
+        </div>
+    </div>
+</div>
+<div class="box-2"><img class="title-2" src="images/title_2.png">
+    <div class="box-2-content"><img class="circle-left" src="images/circle.png"> <img class="circle-right"
+                                                                                      src="images/circle.png"> <img
+            class="circle-top" src="images/circle-half.png"> <img class="circle-bottom" src="images/circle-half-d.png">
+        <ul class="box-2-left">
+            <li class="active"><p>K预备级</p></li>
+            <li><p>P1起步级</p></li>
+            <li><p>P2进阶级</p></li>
+            <li><p>P3快跑级</p></li>
+            <li><p>P4突破级</p></li>
+            <li><p>P5飞越级</p></li>
+            <li><p>P6卓越级</p></li>
+        </ul>
+        <div class="box-2-right">
+            <ul>
+                <li><img src="images/k.png"></li>
+                <li><img src="images/1.png"></li>
+                <li><img src="images/2.png"></li>
+                <li><img src="images/3.png"></li>
+                <li><img src="images/4.png"></li>
+                <li><img src="images/5.png"></li>
+                <li><img src="images/6.png"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="box-3"><img class="title-3" src="images/title_3.png">
+    <div class="circle-box-b"><img src="images/circle.png"> <img src="images/circle.png"></div>
+    <img src="images/font-2.png"> <img src="images/img-1.png">
+    <h3>我们有中教来带孩子过渡到纯外语教堂</h3><img src="images/img-2.png">
+    <p>让老师们成为孩子的朋友，不做擦肩而过的路人，<br>我们拒绝频繁更换外教，<span style="color:#fd5035;font-weight: bold">固定外教全程跟踪学习</span>。</p></div>
+<div class="foot-space"><a id="foot-button" style="cursor: pointer">免费领取两节体验课</a></div>
+<script>$(document).ready(function () {
+    $('.foot-space').hide();
+    $('.box-2-left').children('li').click(function () {
+        var n = $(this).index();
+        $('.box-2-left').children('li').removeClass('active');
+        $('.box-2-left').children('li').eq(n).addClass('active');
+        $('.box-2-right ul').children('li').hide();
+        $('.box-2-right ul').children('li').eq(n).show();
+    });
+
+    $('#foot-button').on('click', function () {
+        jump();
+    });
+    window.addEventListener('scroll', function () {
+        console.log(window.scrollY)
+        if (window.scrollY > 20) {
+            $('.foot-space').show()
+        } else {
+            $('.foot-space').hide();
+        }
+    })
+})
+
+
+videojs("my-video").ready(function () {
+    var myPlayer = this;
+
+    $('.video-play').click(function () {
+        console.log('11111111111')
+        $('.video-play').hide();
+        myPlayer.play();
+        myPlayer.on('ended', function () {
+            $('.video-play').show();
+            $('.poster').show();
+        });
+    });
+    $('#my-video').dblclick(function () {
+        console.log('shaungji')
+    });
+
+});
+
+function jump() {
+    window.location.href = 'login.html';
+}</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Proud Kids</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0,
+           maximum-scale=1.0, user-scalable=no"/>
+    <link type="text/css" rel="stylesheet" href="./css/reset.css"/>
+    <link type="text/css" rel="stylesheet" href="./css/animate.min.css"/>
+    <link type="text/css" rel="stylesheet" href="./css/global.css"/>
+    <link type="text/css" rel="stylesheet" href="./css/css.css"/>
+    <script>
+        var pageIndex = 3;
+    </script>
+</head>
+<body>
+<header></header>
+<article class="o-hidden">
+    <div class="download-container">
+        <div class="head"></div>
+        <div class="page-mini-width">
+            <div class="classin-container">
+                <div class="classinlogo">
+                    <img class="animated flipInX" src="./images/classin.png" alt="">
+                    <p>THE REAL ONLINE CLASSROOM</p>
+                </div>
+                <div class="systems">
+                    <a class="animated bounceInDown" data-id="classInDownLoad_win7">Windows 7</a>
+                    <a class="animated bounceInLeft" data-id="classInDownLoad_winxp">Windows XP</a>
+                    <a class="animated bounceInRight" data-id="classInDownLoad_macOS">MacOS </a>
+                    <div class="ipad">
+                        <a id="ipadbtn" class="animated bounceInUp">iPhone&iPad</a>
+                        <img src="./images/qrCode.png" alt="">
+                    </div>
+                </div>
+                <div class="banner">
+                    <img src="./images/banner.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<footer></footer>
+<script src="http://www.eeo.cn/partner/api/geturl_classindownload.js"></script>
+<script src="./plugins/jquery.min.js"></script>
+<script src="./js/js.js"></script>
+<script>
+    $('#ipadbtn').click(function () {
+        $(this).siblings().toggle()
+    })
+</script>
+</body>
+</html>

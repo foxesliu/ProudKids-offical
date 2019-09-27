@@ -1,0 +1,227 @@
+@charset "utf-8";
+
+@color: #ff6110;
+
+body{
+    font-family:'微软雅黑', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.container{
+    margin: auto;
+    width:1200px;
+    background: #ffffff;
+}
+.hidden{
+    visibility: hidden;
+}
+header{
+    width: 100%;
+    height: 65px;
+    line-height: 65px;
+    .container{
+        
+        background: #ffffff;        
+        
+        .logo{
+            float: left;
+        }
+        .login{
+            float: right;
+            
+            a{  
+                display:inline-block;
+                cursor: pointer;
+                width: 126px;
+                height: 28px;
+                border: 1px solid #ff6110;
+                background: #ffffff;
+                border-radius: 15px;
+                color: @color;
+                text-align: center;
+                text-decoration: none;
+                margin-top: 18px;
+                line-height: 28px;
+                &:hover{
+                    background: #ff6110;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+.classin{
+    width: 100%;
+    height: 727px;
+    background: #f7f7f7;  
+    .container{
+       
+        background: #f7f7f7;  
+        .classinlogo{
+            width: 218px;
+            margin: auto;
+            img{
+                margin-top: 92px;
+            }
+            p{  
+                margin-top:10px;
+                text-align: center;
+                color: #808080;
+            }
+        }      
+        .systems{
+            width: 852px;
+            margin: auto;
+            margin-top: 40px;
+            
+            a{
+                display: inline-block;
+                margin-right:8px; 
+                width: 202px;
+                height: 67px;
+                line-height: 64px;
+                text-align: center;
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 16px;
+                background: url(../images/download/button.png) no-repeat center top 5px;
+                &:hover{
+                    width: 202px;
+                    height: 67px;
+                    background: url(../images/download/buttonh.png) no-repeat;
+                }
+            }
+            .ipad{
+                position: relative;
+                display: inline-block;
+                img{
+                    position: absolute;
+                    display: none;
+                }
+                a{
+                    margin-right:0; 
+                    cursor: pointer;
+                }
+            }
+            
+        }
+    }
+}
+.software{
+    height: 520px;
+    .softs{
+        width: 340px;
+        margin:auto;
+        p{
+            font-size: 42px;
+            color: #424242;
+            margin-top:66px;
+            text-align: center;
+        }
+        .system-box{
+            margin-top: 40px;
+            a{
+                display: inline-block; 
+                width:155px;
+                height: 47px;
+                margin-right: 24px;
+                cursor: pointer;
+            }
+            
+            a:nth-child(2){
+                margin-right: 0;
+            }
+                
+            
+            }
+            
+        }
+        
+    }
+    .softdownload{
+        .softlist{           
+            width: 678px;
+            margin:auto;
+            margin-top: 30px;
+            li{               
+                width:141px;
+                height: 156px;
+                display: inline-block;               
+                //box-shadow: 5px 5px 10px #fff1e2,-5px -5px 10px #fff1e2;
+                border:1px solid #ffffff;
+                margin-right: 30px;
+                margin-bottom: 20px;
+                a{
+                    text-decoration: none;
+                    img{
+                        display: block;
+                        margin:auto;
+                        
+                    }
+                    p{  
+                        margin-top: 16px;
+                        text-align: center;
+                        font-size: 16px;
+                        color: #5a5a5a;
+                        margin-bottom: 20px;
+                    }
+                    .hidden{
+                        margin-top: 5px;;
+                        font-size: 14px;
+                        color: #00b48c;
+                    }
+                    .english{
+                        margin-bottom: 0;
+                        font-size: 10px;
+                        margin-top: 0;
+                    }
+                }
+                &:hover{
+                    border:1px solid #eeeeee;
+                    border-radius: 10px;
+                    box-shadow: 5px 5px 10px #fff1e2,-5px -5px 10px #fff1e2;
+                    p{
+                        visibility:visible;
+                    }
+                }
+                
+            }
+            li:nth-child(4){
+                margin-right: 0;
+            }
+            .macsesu{
+                cursor: pointer;    
+                position: relative;
+                
+                .cesu{
+                    position: absolute;
+                    width: 139px;
+                    display: none;
+                    
+                }
+            }   
+        }
+       
+}
+
+footer{
+    width: 100%;
+    height: 40px;
+    background: #f7f7f7; 
+    line-height: 40px;
+
+    .container{
+        background: #f7f7f7; 
+        text-align: center;
+        color: #858585;
+        span{
+            margin-left: 10px;
+        }
+    }
+}
+
+.hide{
+    display: none;
+}
+.active{
+
+}

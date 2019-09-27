@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Proud Kids</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0,
+           maximum-scale=1.0, user-scalable=no"/>
+    <link type="text/css" rel="stylesheet" href="./css/reset.css"/>
+    <link type="text/css" rel="stylesheet" href="./css/animate.min.css"/>
+    <link type="text/css" rel="stylesheet" href="./css/global.css"/>
+    <link type="text/css" rel="stylesheet" href="./css/css.css"/>
+    <script>
+        var pageIndex = 2;
+        var data = [
+            {
+                name: "Motivation",
+                content: "We live in a visual and digital world. Students consume enormous amounts of music and video content. Proud Kids harnesses this built in, intrinsic level of motivation - why not learn English while singing songs and viewing videos you love? Proud Kids incorporates songs and videos in its lessons and it offers every student the chance to study what they want and listen to messages they want to hear."
+            },
+            {
+                name: "Comprehensible Input",
+                content: "Not only do kids need to listen to messages they want to hear - these messages must be level appropriate. Each Proud Kids' lesson plus our vocabulary is leveled and can be assigned to students based on their level of English. This provides appropriate practice maximizing language acquisition. What's more worth mentioning is that Proud Kids assigns a local English teacher to help make sure that messages are got across properly. "
+            },
+            {
+                name: "Precise, Timely Feedback",
+                content: "Proud Kids provides instant feedback to students. Students begin to \"notice the gap\" and begin to self-correct as they compare their speech to the teacher's. Tools are provided so students can \"dig down\" and understand the language and get the answers they need immediately. Proud Kids works to promote learner autonomy, and guarantees that teachers are reachable at any time when students finds themselves in trouble."
+            },
+            {
+                name: "Lowered Affective Filter",
+                content: "Many students go through a substantial \"silent period\". Others need the time and space given through self-study before they are ready to excel in the very socially demanding classroom. Proud Kids provides a safe, low anxiety environment where learners can proceed at their own pace and practice speaking in a non-threatening place. Teachers are often amazed how the quiet students in their class \"bloom\" at Proud Kids."
+            },
+            {
+                name: "An Oral Language Focus",
+                content: "The 21st century workplace and global nature of communication demands that students have strong speaking skills. The importance of written communication is receding. Proud Kids' PPP (Presentation, Practice, Performance) teaching method with blended teachers allows students to produce, clear, intelligible speech for effective communication across cultures."
+            },
+            {
+                name: "Structured Learning",
+                content: "Our simple PPP (Presentation, Practice, Performance) methodology provides low cognitive overload and an easy to follow learning pathway. Courses are leveled and vocabulary is presented with spaced-time repetition. Proud Kids monitors every word or expression students study and provides instant feedback where students can use the feedback to improve their pronunciation and build their vocabulary."
+            },
+            {
+                name:"Gaming",
+                content:"Students are highly engaged by the gaming dynamics of Proud Kids. Students compete for experience trophies and ranking through their study. However, we don't go overboard and aim to keep the focus on the learning, not the gaming."
+            },
+            {
+                name:"Ambiguity Tolerance",
+                content:"Language is a vast and unpredictable space. Successful language learners are risk takers. Critical to being a risk taker is having a strong ability to not be stressed out by what you don't understand. Proud Kids provides authentic content that challenges students to focus on the general meaning and gist and strengthen their level of ambiguity tolerance."
+            }
+
+        ];
+    </script>
+</head>
+<body>
+<header></header>
+<article>
+    <div class="padagogy-container">
+        <div class="head">
+            <div class="page-mini-width">
+                <img src="images/pedagogy-topbg.png"/>
+                <div class="p">
+                    <p class="font35 font-varelaround color-white">The Pedagogical Foundations of</p>
+                    <p class="font35 font-varelaround color-white mt-15">Proud Kids Online English Education</p>
+                </div>
+            </div>
+        </div>
+        <div class="chris-container">
+            <div class="width-800">
+                <div class="pull-left animated fadeInLeft">
+                    <img src="images/chris.png"/>
+                </div>
+                <div class="pull-right animated fadeInRight">
+                    <div class="top">
+                        <div class="font20 color-lgray mb-5">By</div>
+                        <div class="d">
+                            <p class="color-orange font40 font-varelaround">Chris Leeson</p>
+                            <p class="font16 color-lgray">Founder and CEO of Proud Kids.</p>
+                        </div>
+                    </div>
+                    <div class="bottom color-lgray">Proud Kids is a company that takes pride in having experienced
+                        teachers on staff and designing a product that will help kids in China learn and acquire
+                        English, particularly for international communication.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="key-container">
+            <div class="width-800">
+                <div class="title font33 color-gray font-varelaround t-center">
+                    Here are the key aspects of Proud Kids' pedagogy
+                </div>
+                <div class="box">
+                    <div class="left">
+                        <ul id="ul">
+                            <!--<li class="t-hidden">Motivation</li>-->
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <div class="tit">
+                            <b class="font90 color-yellow mr-5 font-varelaround" id="b">1</b>
+                            <span class="font35 color-gray" id="span">Motivation</span>
+                        </div>
+                        <div id="p" class="p mt-10 color-lgray">
+                        </div>
+                    </div>
+                </div>
+                <div class="toggle t-right mt-20">
+                    <span onclick="showIndexCut()" class="mr-5 c-pointer tran-all"></span>
+                    <span onclick="showIndexAdd()" class="c-pointer tran-all"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<footer></footer>
+<script src="./plugins/jquery.min.js"></script>
+<script src="./js/js.js"></script>
+<script>
+    $(function () {
+        var li = '';
+        for (var i = 0; i < data.length; i++) {
+            li += '<li onclick="changeIndex(' + i + ')" class="t-hidden c-pointer">' + data[i]["name"] + '</li>'
+        }
+        $('#ul').html(li);
+        showContent();
+    });
+
+    var showIndex = 0;
+    function showContent() {
+        $('#b').html(showIndex + 1);
+        $('#span').html(data[showIndex]["name"]);
+        $('#p').html(data[showIndex]["content"]);
+        $('#ul li').eq(showIndex).addClass('active').siblings().removeClass('active');
+    }
+    function showIndexAdd() {
+        showIndex++;
+        if (showIndex >= data.length) {
+            showIndex = 0;
+        }
+        showContent();
+    }
+    function showIndexCut() {
+        showIndex--;
+        if (showIndex < 0) {
+            showIndex = data.length - 1;
+        }
+        showContent();
+    }
+
+    function changeIndex(i) {
+        showIndex = i;
+        showContent();
+    }
+</script>
+</body>
+</html>

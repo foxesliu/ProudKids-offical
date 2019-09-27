@@ -1,0 +1,191 @@
+@charset "utf-8";
+*{
+  box-sizing: border-box;
+}
+html{
+  width: 100%;
+  height:100%;
+}
+.commenStyle(@bg:transparent){
+  z-index: 1000;
+  background: @bg;
+  background-size: 100% 100%;
+  padding-top: 0.1px;
+  .content {
+    margin: .3rem 0 0 1.3rem;
+    padding: 0.17rem 0 0 1.11rem;
+    padding-top: 0.1px;
+  }
+}
+body{
+  width: 100%;
+  height:100%;
+  #container{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ff5a5a,#ec4f36);
+    background-size: 100% 100%;
+    padding-top: .1px;
+    padding-bottom: .8rem;
+    clear: both;
+    .header{
+      width: 100%;
+      height: 1.55rem;
+      clear: both;
+      position: relative;
+      .logo{
+        display: inline-block;
+        width: 5.09rem;
+        height: .51rem;
+        margin: .57rem 0 0 .43rem;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .login{
+        position: absolute;
+        right: 2.26rem;
+        top: .78rem;
+        display: block;
+        width: 3rem;
+        height: .22rem;
+        text-align: right;
+        font-size: .22rem;
+        color: #ffffff;
+        span a{
+          display: inline-block;
+
+          color: #ffffff;
+        }
+        >a{
+          font-size: .2rem;
+          font-weight: bold;
+          color:#ffffff;
+          cursor: pointer;
+        }
+        .user-name{
+          display: inline-block;
+          width: 1rem;
+          text-align: left;
+        }
+
+      }
+      .download{
+        float: right;
+        width: 2.26rem;
+        height: 1.55rem;
+        img{
+          width: 100%;
+        }
+      }
+    }
+    .commenStyle(@bg: #f4f4f4);
+    .tit{
+      width: 2.42rem;
+      height: 0.64rem;
+      line-height: 0.64rem;
+      background: #f98236;
+      border-radius: 0.32rem 0.32rem 0.32rem 0.32rem;
+      overflow: hidden;
+      .circle{
+        float: left;
+        width: 0.1rem;
+        height: 0.1rem;
+        border-radius: 100%;
+        background: #f4f4f4;
+        margin: 0.28rem 0 0 0.13rem;
+      }
+      h1{
+        float: left;
+        color: #fff;
+        margin-left: 0.16rem;
+        font-size: 0.38rem;
+        font-weight: bold;
+      }
+    }
+    .classin_bg{
+      margin: .72rem 0 1.2rem 4.62rem;
+      width: 4.85rem;
+      height: 1.11rem;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    ul{
+      margin-left: 0.28rem;
+      li{
+        float: left;
+        width: 3rem;
+        height: 0.84rem;
+        background: #f7893f url("../images/win7_bg.png") no-repeat 0.3rem center;
+        background-size: 0.58rem 0.58rem;
+        border-radius: 0.17rem;
+        font-size: 0.24rem;
+        line-height: 0.84rem;
+        padding-left: 1.09rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin-right: 0.64rem;
+        color:#fff;
+        a{
+          color: #fff;
+          display: inline-block;
+        }
+        span{
+          font-family: Arial;
+        }
+      }
+      li:hover{
+        //box-shadow: 0 -4px 0.16rem #f36832 inset;
+        box-shadow:0 4px 0.16rem #f36832 inset;
+        a{
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+        }
+      }
+      li:nth-of-type(2){
+        background: #f7893f url("../images/xp_bg.png") no-repeat 0.3rem center;
+        background-size: 0.58rem 0.58rem;
+      }
+      li:nth-of-type(3){
+        background: #f7893f url("../images/mac_bg.png") no-repeat 0.3rem center;
+        background-size: 0.58rem 0.58rem;
+      }
+      li:nth-of-type(4){
+        background: #f7893f url("../images/mac_bg.png") no-repeat 0.3rem center;
+        background-size: 0.58rem 0.58rem;
+        margin-right: 0;
+        position: relative;
+        img{
+          width: 2.94rem;
+          height: 2.83rem;
+          position: absolute;
+          display: none;
+          left: 0;
+          top:-2.84rem;
+        }
+      }
+      li:nth-of-type(4):hover{
+        img{
+          display: block;
+        }
+      }
+    }
+    .footer{
+      width: 5.21rem;
+      height: .19rem;
+      position: absolute;
+      bottom: 0.3rem;
+      right:0.23rem;
+      z-index:100;
+      img{
+        width:100%;
+        height:100%;
+      }
+    }
+  }
+}

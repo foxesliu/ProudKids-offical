@@ -1,0 +1,198 @@
+@charset "utf-8";
+body {
+  font-family: '微软雅黑', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container {
+  margin: auto;
+  width: 1200px;
+  background: #ffffff;
+}
+.hidden {
+  visibility: hidden;
+}
+header {
+  width: 100%;
+  height: 65px;
+  line-height: 65px;
+}
+header .container {
+  background: #ffffff;
+}
+header .container .logo {
+  float: left;
+}
+header .container .login {
+  float: right;
+}
+header .container .login a {
+  display: inline-block;
+  cursor: pointer;
+  width: 126px;
+  height: 28px;
+  border: 1px solid #ff6110;
+  background: #ffffff;
+  border-radius: 15px;
+  color: #ff6110;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 18px;
+  line-height: 28px;
+}
+header .container .login a:hover {
+  background: #ff6110;
+  color: #ffffff;
+}
+.classin {
+  width: 100%;
+  height: 727px;
+  background: #f7f7f7;
+}
+.classin .container {
+  background: #f7f7f7;
+}
+.classin .container .classinlogo {
+  width: 218px;
+  margin: auto;
+}
+.classin .container .classinlogo img {
+  margin-top: 92px;
+}
+.classin .container .classinlogo p {
+  margin-top: 10px;
+  text-align: center;
+  color: #808080;
+}
+.classin .container .systems {
+  width: 852px;
+  margin: auto;
+  margin-top: 40px;
+}
+.classin .container .systems a {
+  display: inline-block;
+  margin-right: 8px;
+  width: 202px;
+  height: 67px;
+  line-height: 64px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  background: url(../images/download/button.png) no-repeat center top 5px;
+}
+.classin .container .systems a:hover {
+  width: 202px;
+  height: 67px;
+  background: url(../images/download/buttonh.png) no-repeat;
+}
+.classin .container .systems .ipad {
+  position: relative;
+  display: inline-block;
+}
+.classin .container .systems .ipad img {
+  position: absolute;
+  display: none;
+}
+.classin .container .systems .ipad a {
+  margin-right: 0;
+  cursor: pointer;
+}
+.software {
+  height: 520px;
+}
+.software .softs {
+  width: 340px;
+  margin: auto;
+}
+.software .softs p {
+  font-size: 42px;
+  color: #424242;
+  margin-top: 66px;
+  text-align: center;
+}
+.software .softs .system-box {
+  margin-top: 40px;
+}
+.software .softs .system-box a {
+  display: inline-block;
+  width: 155px;
+  height: 47px;
+  margin-right: 24px;
+  cursor: pointer;
+}
+.software .softs .system-box a:nth-child(2) {
+  margin-right: 0;
+}
+.softdownload .softlist {
+  width: 678px;
+  margin: auto;
+  margin-top: 30px;
+}
+.softdownload .softlist li {
+  width: 141px;
+  height: 156px;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+.softdownload .softlist li a {
+  text-decoration: none;
+}
+.softdownload .softlist li a img {
+  display: block;
+  margin: auto;
+}
+.softdownload .softlist li a p {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 16px;
+  color: #5a5a5a;
+  margin-bottom: 20px;
+}
+.softdownload .softlist li a .hidden {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #00b48c;
+}
+.softdownload .softlist li a .english {
+  margin-bottom: 0;
+  font-size: 10px;
+  margin-top: 0;
+}
+.softdownload .softlist li:hover {
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #fff1e2, -5px -5px 10px #fff1e2;
+}
+.softdownload .softlist li:hover p {
+  visibility: visible;
+}
+.softdownload .softlist li:nth-child(4) {
+  margin-right: 0;
+}
+.softdownload .softlist .macsesu {
+  cursor: pointer;
+  position: relative;
+}
+.softdownload .softlist .macsesu .cesu {
+  position: absolute;
+  width: 139px;
+  display: none;
+}
+footer {
+  width: 100%;
+  height: 40px;
+  background: #f7f7f7;
+  line-height: 40px;
+}
+footer .container {
+  background: #f7f7f7;
+  text-align: center;
+  color: #858585;
+}
+footer .container span {
+  margin-left: 10px;
+}
+.hide {
+  display: none;
+}
